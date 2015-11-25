@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>策略模式</title>
+  <script src="http://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+</head>
+<body>
+  <input type="text" id="input">
+<script>
+var $input=$('#input');
+var check={
+  isEmpty:function(argument){
+    //逻辑代码
+    return false;
+  },
+  isTel:function(){
+    //逻辑代码
+    return true;
+  }
+}
+var ise=check.isEmpty($input.val());
+var isTel=check.isTel($input.val());
+console.log(ise);//false;
+console.log(isTel);//true
+</script>
+</body>
+</html>

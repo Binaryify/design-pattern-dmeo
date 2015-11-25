@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var myImage=(function(){
+    var imgNode=new Image();
+    document.body.appendChild(imgNode);
+    return {
+      setSrc:function(src){
+        imgNode.src=src;
+      }
+    }
+  })()
+
+  var proxyImage=(function(){
+    var img=new Image();
+    img.onload=function(){
+      myImage.setSrc(this.src);
+    }
+    return {
+      setSrc:function(src){
+        myImage.setSrc('loading.gif');
+        img.src=src;
+      }
+    }
+  })()
+  proxyImage.setSrc("http://www.baidu.com/img/bdlogo.png")
+</script>
+</body>
+</html>

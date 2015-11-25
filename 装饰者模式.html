@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function Sale(price) {
+        this.price = price || 3000;
+    }
+    var sale=new Sale(2000)
+    Sale.prototype.getPrice = function() {
+        return this.price;
+    }
+    console.log(sale.getPrice())	
+   
+   Sale.test=function(){
+   	console.log('test')
+   }
+
+   Sale.test()
+    </script>
+</body>
+
+</html>

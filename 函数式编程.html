@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		Number.prototype=Object.defineProperty(
+			Number.prototype,"double",{
+				get:function(){
+					return (this+this)
+				}
+			}
+		)
+
+		Number.prototype=Object.defineProperty(
+			Number.prototype,"square",{
+				get:function(){
+					return (this*this)
+				}
+			}
+		)
+		Number.prototype.add=function(x){
+			return this+x;
+		}
+		console.log((33).add(3).add(5))
+
+		console.log((8).double.square) //256
+	</script>
+</body>
+</html>

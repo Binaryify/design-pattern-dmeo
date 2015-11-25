@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>单例模式</title>
+    <script src="http://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="a">a</button>
+    <button id="d">d</button>
+    <script>
+    $(function() {
+        var top = {
+            init: function() {
+                this.render();
+                this.bind();
+            },
+            a: 4,
+            render: function() {
+                var me = this;
+                me.btna = $("#a");
+            },
+            bind: function() {
+                var me = this;
+                me.btna.click(function() {
+                    me.test()
+                })
+            },
+            test: function() {
+                a = 5;
+                console.log(a)
+            }
+        }
+        var banner = {
+            init: function() {
+                this.render();
+                this.bind();
+            },
+            a: 4,
+            render: function() {
+                var me = this;
+                me.btna = $("#d");
+            },
+            bind: function() {
+                var me = this;
+                me.btna.click(function() {
+                    me.test()
+                })
+            },
+            test: function() {
+                top.a = 6;
+                console.log(top.a)
+            }
+        }
+        top.init();
+        banner.init();
+    })
+    </script>
+</body>
+
+</html>

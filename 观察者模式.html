@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>观察者模式</title>
+	<script src="http://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+</head>
+<body>
+	<script>
+		~(function(){
+			var o=$({});
+			$.jianting=function(){
+				o.on.apply(o,arguments)
+			}
+			$.fabu=function(){
+				o.trigger.apply(o,arguments)
+			}
+			$.qingchu=function(){
+				o.off.apply(o,arguments)
+			}
+		})()
+		$.jianting('myEvent',function(e,a,b,c){
+			alert(a+"||"+b+'||'+c);
+		})
+		
+		setTimeout(function(){
+			$.fabu('myEvent',[1,2,3])
+		},1000)
+
+	</script>
+</body>
+</html>

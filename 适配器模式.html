@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function pp(){
+	this.test=function(){
+		console.log("test")
+	}
+}
+
+pp.prototype.gogo=function(){
+	console.log("gogo")
+}
+function shipeiqi(){
+	var s=new pp();
+	var aa={
+		test:function(){
+			s.test()
+		},
+		gogo:function(){
+			s.gogo()
+		}
+	}
+	return aa;
+}
+var aa=shipeiqi();
+aa.test()
+	</script>
+</body>
+</html>
